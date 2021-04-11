@@ -90,7 +90,7 @@ System.out.println("playlist creer: " + Arrays.toString(tab));
             }
             
         });
-       
+        envoyer.start();
         
         Thread recevoir = new Thread(new Runnable() {
             String msg;
