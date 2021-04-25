@@ -28,6 +28,9 @@ public class PlayList {
 	public ArrayList<UUID> getElements() {
 		return elementUUIDs;
 	}
+	public UUID getUUID(){
+		return uuid;
+	}
 	
 	public String getTitle() {
 		return title;

@@ -31,9 +31,10 @@ public class MusicHub {
 	private List<AudioElement> elements;
 	
 	public static final String DIR = System.getProperty("user.dir");
-	public static final String ALBUMS_FILE_PATH = DIR + "\\files\\albums.xml";
-	public static final String PLAYLISTS_FILE_PATH = DIR + "\\files\\playlists.xml";
-	public static final String ELEMENTS_FILE_PATH = DIR + "\\files\\elements.xml";
+	public static final String SOURCE = System.getProperty("source.dir")==null?"files":System.getProperty("source.dir");
+	public static final String ALBUMS_FILE_PATH = DIR + "\\"+SOURCE+"\\albums.xml";
+	public static final String PLAYLISTS_FILE_PATH = DIR + "\\"+SOURCE+"\\playlists.xml";
+	public static final String ELEMENTS_FILE_PATH = DIR + "\\"+SOURCE+"\\elements.xml";
 	
 	private XMLHandler xmlHandler = new XMLHandler();
 	
@@ -102,7 +103,7 @@ public class MusicHub {
 					audioBookList.add(ae);
 		Collections.sort(audioBookList, new SortByAuthor());
 		for (AudioElement ab : audioBookList)
-			titleList.append(ab.getArtist()+ "\n");
+			titleList.append(ab.getTitle()+ "\n"); //faute;
 		return titleList.toString();
 	}
 

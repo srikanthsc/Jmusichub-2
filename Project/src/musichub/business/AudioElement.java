@@ -51,9 +51,14 @@ public abstract class AudioElement {
 	public UUID getUUID() {
 		return this.uuid;
 	}
-	
+	public String getContent() {
+		return this.content;
+	}
 	public String getArtist() {
 		return this.artist;
+	}
+	public int getLengthInSeconds() {
+		return lengthInSeconds;
 	}
 
 	public String getTitle() {

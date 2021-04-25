@@ -45,6 +45,7 @@ public class Album {
 	public Album (Element xmlElement) throws Exception {
 		try {
 			this.title = xmlElement.getElementsByTagName("title").item(0).getTextContent();
+			this.artist = xmlElement.getElementsByTagName("artist").item(0).getTextContent();
 			this.lengthInSeconds = Integer.parseInt(xmlElement.getElementsByTagName("lengthInSeconds").item(0).getTextContent());
 			String uuid = null;
 			try {
@@ -107,7 +108,15 @@ public class Album {
 	public Date getDate() {
 		return date;
 	}
-	
+	public String getArtist() {
+		return artist;
+	}
+	public int getLengthInSeconds() {
+		return lengthInSeconds;
+	}
+	public UUID getUUID() {
+		return uuid;
+	}
 	public void createXMLElement(Document document, Element parentElement)
 	{
 		Element albumElement = document.createElement("album");
