@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<albums>
+	<album>
+		<title>Best of Beatles</title>
+		<artist>The Beatles</artist>
+		<lengthInSeconds>2160</lengthInSeconds>
+		<UUID>00000000-0000-0000-0000-000000000000</UUID>
+		<date>2021-04-06</date>
+		<songs>
+			<UUID>00000000-0000-0000-0000-000000000001</UUID>
+			<UUID>00000000-0000-0000-0000-000000000002</UUID>
+			<UUID>00000000-0000-0000-0000-000000000003</UUID>
+			<UUID>00000000-0000-0000-0000-000000000004</UUID>
+			<UUID>00000000-0000-0000-0000-000000000005</UUID>
+		</songs>
+	</album>
+</albums>
