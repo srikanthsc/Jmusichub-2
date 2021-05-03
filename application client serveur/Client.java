@@ -76,11 +76,12 @@ public class Client extends Serveur {
        final PrintWriter out;
        final Scanner sc = new Scanner(System.in);
        UpdateList ipl = new UpdateList();
-
+       // La classe PrintWriter ajoute à un flux la possibilité de faire des écriture sous forme de texte des types primitifs java, et des chaînes de caractères.
        filetxt();
        printMenu();
        ipl.displaylistupdate();
         identification();
+        //Initialisation du Design Pattern
         Singleton2 s1 = Singleton2.getInstance();
         s1.show1();
          //TODO: handle exception
@@ -93,8 +94,8 @@ public class Client extends Serveur {
  
     
 
-  activitysong();
-  signout();
+  activitysong();//execution de la methode
+  signout();//execution de la methode
   
   
      
@@ -155,7 +156,7 @@ public class Client extends Serveur {
 
 
   }
-  public static void printMenu(){
+  public static void printMenu(){    //affiche le decor
 		System.out.println();
 		System.out.println();
 		System.out.println("**********************************************");
@@ -166,7 +167,7 @@ public class Client extends Serveur {
 
 
 
-  public static void filetxt(){
+  public static void filetxt(){ //methode poue ecrire dans le fichier
     try
     {
       // Le fichier d'entrée
@@ -194,7 +195,7 @@ public class Client extends Serveur {
   
 }
 
-public static void identification()  {
+public static void identification()  { //methode pour l'identification
 
 Scanner scanner = new Scanner(System.in);
             
@@ -215,7 +216,7 @@ Scanner scanner = new Scanner(System.in);
 }
 
 
- public static void activitysong(){
+ public static void activitysong(){  //methode pour l'ecoute de la musique
   Scanner scanner=new Scanner(System.in);
   String response3;
   System.out.println("selectionner un numero pour jouer la musique");
@@ -236,7 +237,7 @@ Scanner scanner = new Scanner(System.in);
  System.out.println("ecoute terminer");
  break;
  case("3"):System.out.println("ninho");
- Playmusic mb_747 = new Playmusic("music/ninho.wav");
+ Playmusic mb_747 = new Playmusic("music/ninho.mp3");
  System.out.println("ecoute terminer");
  System.out.println("a l'arret");
  System.out.println("appuyer sur une touche pour que le serveur vous envoie les information");
@@ -245,7 +246,7 @@ Scanner scanner = new Scanner(System.in);
   }
 }
 
-public static void signout(){
+public static void signout(){  //methode pour se deconnecter
   
   Scanner scanner=new Scanner(System.in);
   String response2;
@@ -265,7 +266,7 @@ public static void signout(){
  
 
 
-class UpdateList implements Update {
+class UpdateList implements Update {  // methode pour la mise a jour
   public void displaylistupdate(){
      try
    {

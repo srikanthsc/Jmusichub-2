@@ -63,20 +63,19 @@ import java.io.*;
 
 
 
-class  Playmusic  {
+class  Playmusic  { //classe Playmusic
   
-   Playmusic(String filename){
+   Playmusic(String filename){ //contructeur
      int total, totalToRead, numBytesRead, numBytesToRead;
      byte[] buffer;
      boolean         stopped;
-     AudioFormat     wav;
-     TargetDataLine  line;
-     SourceDataLine  lineIn;
-     DataLine.Info   info;
-     File            file;
-     FileInputStream fis;
-     //AudioFormat(float sampleRate, int sampleSizeInBits, 
-     //int channels, boolean signed, boolean bigEndian) 
+     AudioFormat     wav;  //format de l'audio
+     TargetDataLine  line;  // creation de le variable line
+     SourceDataLine  lineIn; // creation de le variable lineIn
+     DataLine.Info   info;  // creation de le variable info
+     File            file; // creation de le variable file
+     FileInputStream fis; //// creation de le variable fis
+
      wav = new AudioFormat(44100, 16, 2, true, false);
      info = new DataLine.Info(SourceDataLine.class, wav);
      buffer = new byte[1024*333];
@@ -87,7 +86,7 @@ class  Playmusic  {
        System.out.print("no support for " + wav.toString() );
      }
      try {
-       // Obtain and open the line.
+       // Obtenir et ouvrir la ligne
        lineIn = (SourceDataLine) AudioSystem.getLine(info);
        lineIn.open(wav);
        lineIn.start();
@@ -119,7 +118,7 @@ public class Serveur   {
       final BufferedReader in;
       final PrintWriter out;
       final Scanner sc=new Scanner(System.in);
-
+    // La classe PrintWriter ajoute à un flux la possibilité de faire des écriture sous forme de texte des types primitifs java, et des chaînes de caractères.
       Serveur sv= new Serveur();
       
 
@@ -141,7 +140,7 @@ public class Serveur   {
 		}
 		
 		
-		//Set up to read from console
+		//Configurer pour lire à partir de la console
 		BufferedReader consoleBR = startConsoleBuffer();
 		
 		BufferedReader textBR = startFileReader();
@@ -156,7 +155,7 @@ public class Serveur   {
 			
 			response1 = consoleBR.readLine();
 
-			switch(response1){
+			switch(response1){// ajout des switch case
 			
 			case "1":
 				FileWriter fw = new FileWriter("Songtest.txt",true);
@@ -294,7 +293,7 @@ public class Serveur   {
    
       
       
-      public List<String> Playlistavailable(){
+      public List<String> Playlistavailable(){   //methode des playlist disponible
 
          List<String> list1 = new ArrayList<String>(); 
          list1.add("Alone Again - The Weeknd "); 
@@ -326,7 +325,7 @@ public class Serveur   {
       }// fin de la methode startFileReader
 
 
-      public static void ShowMenu(){
+      public static void ShowMenu(){  //methode pour affiche le menu
         
          System.out.println("1 - Add song data");
          System.out.println("2 - List all songs");
